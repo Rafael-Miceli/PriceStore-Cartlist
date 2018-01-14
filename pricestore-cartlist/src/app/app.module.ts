@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ProductsCartlistModule } from './products-cartlist/products-cartlist.module';
+import { CartlistListComponent } from './cartlist-list/cartlist-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartlistListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ProductsCartlistModule
   ],
   providers: [],
   bootstrap: [AppComponent]

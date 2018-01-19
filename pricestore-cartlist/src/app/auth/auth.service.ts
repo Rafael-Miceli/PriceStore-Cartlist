@@ -4,6 +4,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/ro
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular//common/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AuthService implements CanActivate {
@@ -26,7 +27,11 @@ export class AuthService implements CanActivate {
 
   verifyLogin(url: string): Observable<boolean> {
 
-    return this.http.post(url, `{"name": "rafael", "password": "123"}`).map(r => {console.log(r); return false; });
+    return this.http.post(url, `{"name": "rafael", "password": "123"}`)
+    .map(r => {console.log(r); return false; })
+    .catch(err => {
+      //throw<Observable>
+    });
 
     // if (this.userLoggerdIn) {
     //   console.log('Usuario logado');

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CartlistListComponent } from './cartlist-list/cartlist-list.component';
@@ -14,9 +13,8 @@ const cartlistRoutes = [
   imports: [
     CommonModule,
     RouterModule.forChild(
-      cartlistRoutes // <-- debugging purposes only
-    ),
-    HttpClientModule
+      cartlistRoutes
+    )
   ],
   declarations: [CartlistListComponent],
   providers: []

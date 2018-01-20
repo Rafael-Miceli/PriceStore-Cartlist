@@ -14,6 +14,7 @@
     <tr *ngFor="let recipe of recipes">
         <td>
           <a [routerLink]="['/recipe', recipe.name]" routerLinkActive="active" >{{recipe.name}}</a>
+          <a (click)="componentAdicionarNaLista(recipe.name)">Adicionar Ingredientes a lista de compras</a>
         </td>
     </tr>    
   </tbody>

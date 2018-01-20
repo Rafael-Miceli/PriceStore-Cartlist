@@ -31,4 +31,8 @@ export class CartlistListComponent implements OnInit {
     }];
   }
 
+  componentAdicionarNaLista(recipe: string): void {
+    console.log('Abrir component de adicionar em lista ingredientes do ', recipe);
+  }
+
 }

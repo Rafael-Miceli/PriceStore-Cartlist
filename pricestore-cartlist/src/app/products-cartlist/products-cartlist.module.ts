@@ -7,7 +7,7 @@ import { CartlistListComponent } from './cartlist-list/cartlist-list.component';
 import { AuthService } from '../auth/auth.service';
 
 const cartlistRoutes = [
-  {path: 'cartlists', component: CartlistListComponent, canActivate: [AuthService]}
+  {path: 'cartlists', component: CartlistListComponent}
 ];
 
 @NgModule({
@@ -19,6 +19,6 @@ const cartlistRoutes = [
     HttpClientModule
   ],
   declarations: [CartlistListComponent],
-  providers: [AuthService]
+  providers: []
 })
 export class ProductsCartlistModule { }

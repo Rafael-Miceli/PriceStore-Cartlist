@@ -11,25 +11,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let recipe of recipes">
         <td>
-          Peixe frito
+          <a [routerLink]="['/recipe', recipe.name]" routerLinkActive="active" >{{recipe.name}}</a>
         </td>
-    </tr>
-    <tr>
-        <td>
-          Strogonoff
-        </td>
-    </tr>
-    <tr>
-        <td>
-          Salpicão de palmito
-        </td>
-    </tr>
-    <tr>
-        <td>
-          Chop Suey
-        </td>
-    </tr>
+    </tr>    
   </tbody>
 </table>

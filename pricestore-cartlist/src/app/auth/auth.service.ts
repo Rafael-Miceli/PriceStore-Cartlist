@@ -28,10 +28,7 @@ export class AuthService implements CanActivate {
   verifyLogin(url: string): Observable<boolean> {
 
     return this.http.post(url, `{"name": "rafael", "password": "123"}`)
-    .map(r => {console.log(r); return false; })
-    .catch(err => {
-      //throw<Observable>
-    });
+    .map(r => {console.log(r); return false; });
 
     // if (this.userLoggerdIn) {
     //   console.log('Usuario logado');

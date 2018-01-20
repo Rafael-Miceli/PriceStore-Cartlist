@@ -1,21 +1,3 @@
-<h2>
-    Minhas lista de compras para receitas
-</h2>
-
-<table>
-  <thead>
-    <tr>
-      <td>
-        Listas
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let recipe of recipes">
-        <td>
-          <a [routerLink]="['/recipe', recipe.name]" routerLinkActive="active" >{{recipe.name}}</a>
-          <a (click)="componentAdicionarNaLista(recipe.name)">Adicionar Ingredientes a lista de compras</a>
-        </td>
-    </tr>    
-  </tbody>
-</table>
+<p>
+  catlist-list works!
+</p>

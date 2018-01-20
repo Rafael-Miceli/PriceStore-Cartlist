@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { ProductsCartlistModule } from './products-cartlist/products-cartlist.module';
+import { CartlistModule } from './cartlist/cartlist.module';
+import { RecipesModule } from './recipes/recipes.module';
 import { HomeComponent } from './home/home.component';
 
 
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    ProductsCartlistModule,
+    CartlistModule,
+    RecipesModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only

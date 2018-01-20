@@ -19,4 +19,4 @@ const cartlistRoutes = [
   declarations: [CartlistListComponent],
   providers: []
 })
-export class ProductsCartlistModule { }
+export class CartlistModule { }

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CartlistListComponent } from './cartlist-list/cartlist-list.component';
 import { AuthService } from '../auth/auth.service';
+import { AddToListComponent } from './add-to-list/add-to-list.component';
 
 const cartlistRoutes = [
   {path: 'cartlists', component: CartlistListComponent}
@@ -16,7 +17,7 @@ const cartlistRoutes = [
       cartlistRoutes
     )
   ],
-  declarations: [CartlistListComponent],
+  declarations: [CartlistListComponent, AddToListComponent],
   providers: []
 })
 export class CartlistModule { }

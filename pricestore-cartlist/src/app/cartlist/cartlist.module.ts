@@ -7,7 +7,7 @@ import { AuthService } from '../auth/auth.service';
 import { AddToListComponent } from './add-to-list/add-to-list.component';
 
 const cartlistRoutes = [
-  {path: 'cartlists', component: CartlistListComponent}
+  {path: 'cartlists', component: CartlistListComponent}  
 ];
 
 @NgModule({

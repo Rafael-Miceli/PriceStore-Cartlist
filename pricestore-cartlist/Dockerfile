@@ -14,6 +14,8 @@ WORKDIR /ng-app
 
 COPY . .
 
+EXPOSE 4200
+
 ENTRYPOINT ["npm", "start"]
 
 ## Build the angular app in production mode and store the artifacts in dist folder

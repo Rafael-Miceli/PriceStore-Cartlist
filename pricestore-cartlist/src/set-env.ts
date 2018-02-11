@@ -15,9 +15,7 @@ const targetPath = `./src/environments/environment.ts`;
 const envConfigFile = `
 export const environment = {
   production: ${isProd},
-  apiEndpoint: "${process.env.APIENDPOINT}",
-  envName: "${process.env.ENVNAME}",
-  badActorVersion: 1
+  envName: '${process.env.ENVNAME}'
 };
 `;
 

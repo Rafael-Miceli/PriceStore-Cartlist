@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
 import { CartlistModule } from './cartlist/cartlist.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { HomeComponent } from './home/home.component';
+import { EnvConfig } from './env-config';
 
 
 const appRoutes: Routes = [
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     CartlistModule,
     RecipesModule,
@@ -35,9 +38,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [EnvConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

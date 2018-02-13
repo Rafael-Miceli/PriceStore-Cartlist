@@ -11,8 +11,7 @@ require('dotenv').config();
 const environment = process.env.ENVNAME;
 const isProd = environment === 'prod';
 
-const targetPath = `git status
-./src/assets/env-config.json`;
+const targetPath = `./src/assets/env-config.json`;
 const envConfigFile = `
 {
   production: ${isProd},

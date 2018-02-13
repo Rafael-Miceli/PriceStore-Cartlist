@@ -1,7 +1,4 @@
-### STAGE 1: Build ###
-
-# We label our stage as 'builder'
-FROM node:8-alpine as builder
+FROM smebberson/alpine-nginx-nodejs
 
 COPY package.json ./
 
@@ -14,25 +11,21 @@ WORKDIR /ng-app
 
 COPY . .
 
-EXPOSE 4200
+RUN $(npm bin)/ng build --prod --build-optimizer
 
-ENTRYPOINT ["npm", "start"]
+COPY nginx/default.conf /etc/nginx/conf.d/
 
-## Build the angular app in production mode and store the artifacts in dist folder
-# RUN $(npm bin)/ng build --prod --build-optimizer
+RUN rm -rf /usr/share/nginx/html/*
 
+RUN cp -R dist/* /usr/share/nginx/html
 
-# ### STAGE 2: Setup ###
+ENV ENVNAME=PROD
 
-# FROM nginx:1.13.3-alpine
+CMD ["npm", "start"]
+#CMD ["nginx", "-g", "daemon off;"]
+#CMD ["cp", "src/assets/env-config.json", "/usr/share/nginx/html/assets/"]
+# cp src/assets/env-config.json /usr/share/nginx/html/assets/
 
-# ## Copy our default nginx config
-# COPY nginx/default.conf /etc/nginx/conf.d/
-
-# ## Remove default nginx website
-# RUN rm -rf /usr/share/nginx/html/*
-
-# ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
-# COPY --from=builder /ng-app/dist /usr/share/nginx/html
-
-# CMD ["nginx", "-g", "daemon off;"]
+#["npm", "run", "config"]
+#CMD ["npm", "run", "config", "&&", "cp", "src/assets/env-config.json", "/usr/share/nginx/html/assets/", "&&", "bash"]
+#ENTRYPOINT []

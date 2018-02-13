@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/set-env.ts",
-    "start": "ng serve",
+    "config": "ts-node ./src/set-env.ts && cp src/assets/env-config.json /usr/share/nginx/html/assets/",
+    "start": "npm run config && ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

@@ -4,5 +4,7 @@ services:
   pricestore-cartlist:
     image: pricestore-cartlist
     build: .
+    ports:
+      - "5006:80"
     environment:       
-      - ENVNAME=PROD
+      - ENVNAME=PROD_COMPOSE

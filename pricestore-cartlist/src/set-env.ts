@@ -14,9 +14,9 @@ const isProd = environment === 'prod';
 const targetPath = `./src/assets/env-config.json`;
 const envConfigFile = `
 {
-  production: ${isProd},
-  envName: '${process.env.ENVNAME}'
-};
+  "production": ${isProd},
+  "envName": "${process.env.ENVNAME}"
+}
 `;
 
 writeFile(targetPath, envConfigFile, function (err) {

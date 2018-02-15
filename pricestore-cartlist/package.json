@@ -6,6 +6,7 @@
     "ng": "ng",
     "config": "ts-node ./src/set-env.ts && cp src/assets/env-config.json /usr/share/nginx/html/assets/",
     "start": "npm run config && nginx -g \"daemon off;\"",
+    "start-con": "con-run.sh",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

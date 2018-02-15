@@ -162,7 +162,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 RUN cp -R dist/* /usr/share/nginx/html
 
-CMD ["npm", "start"]
+CMD ["./con-run.sh"]
 #CMD ["nginx", "-g", "daemon off;"]
 #CMD ["cp", "src/assets/env-config.json", "/usr/share/nginx/html/assets/"]
 # cp src/assets/env-config.json /usr/share/nginx/html/assets/

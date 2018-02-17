@@ -7,4 +7,4 @@ services:
     ports:
       - "5006:80"
     environment:       
-      - ENVNAME=PROD_COMPOSE
+      - ENVNAME=PROD_COMPOSE_2

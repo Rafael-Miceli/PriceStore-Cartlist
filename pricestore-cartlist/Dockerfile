@@ -19,6 +19,5 @@ RUN rm -rf /usr/share/nginx/html/*
 
 RUN cp -R dist/* /usr/share/nginx/html
 
-#ENTRYPOINT [ "./con-run.sh" ]
 ENTRYPOINT ["npm", "run", "start-con"]
 

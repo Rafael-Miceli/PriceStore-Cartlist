@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -11,6 +11,9 @@ import { RecipesModule } from './recipes/recipes.module';
 import { HomeComponent } from './home/home.component';
 import { EnvConfig } from './env-config';
 
+export function initConfig(config: EnvConfig) {
+  return () => config.load();
+}
 
 const appRoutes: Routes = [
   {
@@ -40,7 +43,9 @@ const appRoutes: Routes = [
     ),
     HttpClientModule,
   ],
-  providers: [EnvConfig],
+  providers: [
+    EnvConfig,
+    { provide: APP_INITIALIZER, useFactory: initConfig, deps: [EnvConfig], multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

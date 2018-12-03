@@ -3,5 +3,8 @@ version: '2'
 services:
   pricestore-cartlist:
     image: pricestore-cartlist
+    build: .
     environment:       
-      - ENVNAME=local
+      - ENVNAME=container
+
+# docker-compose -f docker-compose.build.yml up --build
